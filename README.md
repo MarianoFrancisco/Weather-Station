@@ -1,2 +1,2 @@
-# weather-station-app
+# Weather Station
 >Weather station data visualization application.
