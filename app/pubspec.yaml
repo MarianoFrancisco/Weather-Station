@@ -1,10 +1,10 @@
 name: app
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: ">=3.3.3"
 
 dependencies:
   flutter:
@@ -19,10 +19,10 @@ dev_dependencies:
   flutter_launcher_icons:
 
 flutter_icons:
-  android: 'launcher_icon'
+  android: "launcher_icon"
   ios: true
-  image_path: 'assets/logo.png'
-  adaptive_icon_background: 'assets/logo.png'
+  image_path: "assets/logo.png"
+  adaptive_icon_background: "assets/logo.png"
 
 flutter:
   uses-material-design: true
