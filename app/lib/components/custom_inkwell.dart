@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
 class CustomInkWell extends StatelessWidget {
   final VoidCallback onTap;
   final Widget child;

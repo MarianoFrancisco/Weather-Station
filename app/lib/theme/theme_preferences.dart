@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
 class ThemePreferences {
   static const String _themeKey = 'theme';
 

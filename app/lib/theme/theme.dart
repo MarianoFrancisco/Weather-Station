@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
   colorScheme: ColorScheme.light(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app/theme/theme.dart';
 
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
 class ThemeProvider with ChangeNotifier {
   ThemeData providerThemeData = lightMode;
   static const String _themeKey = 'theme';

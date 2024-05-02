@@ -1,6 +1,8 @@
 import 'package:app/components/drawer_content.dart';
+import 'package:app/pages/report/body.dart';
 import 'package:flutter/material.dart';
 
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
 class Report extends StatelessWidget {
   const Report({super.key});
 
@@ -11,10 +13,9 @@ class Report extends StatelessWidget {
       drawer: const DrawerContent(),
       appBar: AppBar(
         title: const Text('Reportes'),
+        centerTitle: true,
       ),
-      body: const Center(
-        child: Text('Reportes Information'),
-      ),
+      body: const ReportBody(),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:app/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
 class ThemeToggle extends StatelessWidget {
   const ThemeToggle({super.key});
 

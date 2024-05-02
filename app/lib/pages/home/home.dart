@@ -1,8 +1,10 @@
 import 'package:app/components/drawer_content.dart';
+import 'package:app/pages/home/body.dart';
 import 'package:flutter/material.dart';
 
-class Cunoc extends StatelessWidget {
-  const Cunoc({super.key});
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +12,10 @@ class Cunoc extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       drawer: const DrawerContent(),
       appBar: AppBar(
-        title: const Text('Cunoc'),
+        title: const Text('Estaciones'),
+        centerTitle: true,
       ),
-      body: const Center(
-        child: Text('Cunoc Information'),
-      ),
+      body: const HomeBody(),
     );
   }
 }

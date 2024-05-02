@@ -1,8 +1,10 @@
 import 'package:app/components/drawer_content.dart';
+import 'package:app/pages/conce/body.dart';
 import 'package:flutter/material.dart';
 
-class GraphicReport extends StatelessWidget {
-  const GraphicReport({super.key});
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
+class Conce extends StatelessWidget {
+  const Conce({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +12,10 @@ class GraphicReport extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       drawer: const DrawerContent(),
       appBar: AppBar(
-        title: const Text('Gráfica de reportes'),
+        title: const Text('Conce'),
+        centerTitle: true,
       ),
-      body: const Center(
-        child: Text('Gráfica Information'),
-      ),
+      body: const ConceBody(),
     );
   }
 }
