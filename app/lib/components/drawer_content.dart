@@ -1,7 +1,11 @@
 import 'package:app/components/custom_inkwell.dart';
 import 'package:app/components/theme_toggle.dart';
+import 'package:app/pages/cantel_information.dart';
+import 'package:app/pages/conce_information.dart';
 import 'package:app/pages/cunoc_information.dart';
+import 'package:app/pages/graphic_report.dart';
 import 'package:app/pages/home.dart';
+import 'package:app/pages/report.dart';
 import 'package:flutter/material.dart';
 
 class DrawerContent extends StatelessWidget {
@@ -44,6 +48,50 @@ class DrawerContent extends StatelessWidget {
             imagePath: 'assets/logo.png',
             child: const Text(
               "Cunoc",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
+          ),
+          CustomInkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const Cantel()));
+            },
+            imagePath: 'assets/logo.png',
+            child: const Text(
+              "Cantel",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
+          ),
+          CustomInkWell(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const Conce()));
+            },
+            imagePath: 'assets/logo.png',
+            child: const Text(
+              "Conce",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
+          ),
+          CustomInkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const Report()));
+            },
+            imagePath: 'assets/logo.png',
+            child: const Text(
+              "Reportes",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
+          ),
+          CustomInkWell(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const GraphicReport()));
+            },
+            imagePath: 'assets/logo.png',
+            child: const Text(
+              "Gráfica de reportes",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
           ),
