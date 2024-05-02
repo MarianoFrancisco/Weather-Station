@@ -6,7 +6,7 @@ Weather station data visualization application.
 
 - **Mariano Francisco Camposeco Camposeco**
 - **Pedro Ricardo Gordillo González**
-- **Tercero**
+- **Carlos Alexis Ovalle de León**
 - **Cuarto**
 - **Quinto**
 - **Sexto**
