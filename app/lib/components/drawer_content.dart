@@ -31,7 +31,10 @@ class DrawerContent extends StatelessWidget {
                   .push(MaterialPageRoute(builder: (context) => const Home()));
             },
             imagePath: 'assets/logo.png',
-            child: const Text("Inicio"),
+            child: const Text(
+              "Inicio",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
           ),
           CustomInkWell(
             onTap: () {
@@ -39,7 +42,10 @@ class DrawerContent extends StatelessWidget {
                   .push(MaterialPageRoute(builder: (context) => const Cunoc()));
             },
             imagePath: 'assets/logo.png',
-            child: const Text("Cunoc"),
+            child: const Text(
+              "Cunoc",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
           ),
           const ThemeToggle(),
         ],
