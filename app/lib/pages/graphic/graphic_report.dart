@@ -12,7 +12,7 @@ class GraphicReport extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       drawer: const DrawerContent(),
       appBar: AppBar(
-        title: const Text('Gráficas'),
+        title: const Text('Gráficas aquí'),
         centerTitle: true,
       ),
       body: const GraphicReportBody(),
