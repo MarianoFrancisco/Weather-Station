@@ -1,6 +1,8 @@
 import 'package:app/components/drawer_content.dart';
+import 'package:app/pages/cantel/body.dart';
 import 'package:flutter/material.dart';
 
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
 class Cantel extends StatelessWidget {
   const Cantel({super.key});
 
@@ -11,10 +13,9 @@ class Cantel extends StatelessWidget {
       drawer: const DrawerContent(),
       appBar: AppBar(
         title: const Text('Cantel'),
+        centerTitle: true,
       ),
-      body: const Center(
-        child: Text('Cantel Information'),
-      ),
+      body: const CantelBody(),
     );
   }
 }

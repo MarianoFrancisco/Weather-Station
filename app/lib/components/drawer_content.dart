@@ -1,13 +1,14 @@
 import 'package:app/components/custom_inkwell.dart';
 import 'package:app/components/theme_toggle.dart';
-import 'package:app/pages/cantel_information.dart';
-import 'package:app/pages/conce_information.dart';
-import 'package:app/pages/cunoc_information.dart';
-import 'package:app/pages/graphic_report.dart';
-import 'package:app/pages/home.dart';
-import 'package:app/pages/report.dart';
+import 'package:app/pages/cantel/cantel_information.dart';
+import 'package:app/pages/conce/conce_information.dart';
+import 'package:app/pages/cunoc/cunoc_information.dart';
+import 'package:app/pages/graphic/graphic_report.dart';
+import 'package:app/pages/home/home.dart';
+import 'package:app/pages/report/report.dart';
 import 'package:flutter/material.dart';
 
+// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
 class DrawerContent extends StatelessWidget {
   const DrawerContent({super.key});
 
