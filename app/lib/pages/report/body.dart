@@ -7,7 +7,7 @@ class ReportBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Reportes Information'),
+      child: Text('Mostrar reportes aquí'),
     );
   }
 }
