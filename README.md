@@ -4,7 +4,7 @@ Weather station data visualization application.
 ## **Authors**
 * **Mariano Francisco Camposeco Camposeco**
 * **Pedro Ricardo Gordillo González**
-* **Tercero**
+* **Luis Nery Cifuentes Rodas**
 * **Cuarto**
 * **Quinto**
 * **Sexto**
