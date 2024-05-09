@@ -4,7 +4,7 @@ Code related to the weather station application, which allows you to view the la
 
 ## **Commands**
 
-> **RDownload dependencies**
+> **Download dependencies**
 ```
 flutter pub get
 ```
