@@ -26,15 +26,15 @@ class WeatherData {
   factory WeatherData.fromJson(Map<String, dynamic> json) {
     return WeatherData(
       fechahora: DateTime.parse(json['fechahora']),
-      temperatura: json['temperatura'].toDouble(),
-      humedad: json['humedad'].toDouble(),
-      radiacion: json['radiacion'].toDouble(),
-      suelo1: json['suelo1'].toDouble(),
-      suelo2: json['suelo2'].toDouble(),
-      suelo3: json['suelo3'].toDouble(),
-      direccion: json['direccion'].toDouble(),
-      velocidad: json['velocidad'].toDouble(),
-      precipitacion: json['precipitacion'].toDouble(),
+      temperatura: double.parse(json['temperatura']),
+      humedad: double.parse(json['humedad']),
+      radiacion: double.parse(json['radiacion']),
+      suelo1: double.parse(json['suelo1']),
+      suelo2: double.parse(json['suelo2']),
+      suelo3: double.parse(json['suelo3']),
+      direccion: double.parse(json['direccion']),
+      velocidad: double.parse(json['velocidad']),
+      precipitacion: double.parse(json['precipitacion']),
     );
   }
 }
