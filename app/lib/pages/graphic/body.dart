@@ -8,21 +8,21 @@ class GraphicReportBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<TemperatureData> temperatureDataList = [
-      TemperatureData('Cantel', [17, 19, 15, 21, 18]),
-      TemperatureData('Concepcion Chiquirichapa', [17, 19, 15, 21, 18]),
-      TemperatureData('Centro Universitario de Occidente', [23, 25, 28, 22, 26]),
+      TemperatureData('Cantel', [17, 19, 15, 21, 18, 12, 26]),
+      TemperatureData('Concepcion Chiquirichapa', [17, 19, 15, 21, 18, 15, 12]),
+      TemperatureData('Centro Universitario de Occidente', [23, 25, 28, 22, 26, 15, 9]),
     ];
 
     final List<TemperatureData> humidityDataList = [
-      TemperatureData('Cantel', [10, 15, 8, 12, 9]),
-      TemperatureData('Concepcion Chiquirichapa', [12, 10, 14, 11, 13]),
-      TemperatureData('Centro Universitario de Occidente', [8, 11, 9, 10, 12]),
+      TemperatureData('Cantel', [10, 15, 8, 12, 9, 12, 30]),
+      TemperatureData('Concepcion Chiquirichapa', [12, 10, 14, 11, 13, 13, 17]),
+      TemperatureData('Centro Universitario de Occidente', [8, 11, 9, 10, 12, 15, 16]),
     ];
 
     final List<TemperatureData> radiationDataList = [
-      TemperatureData('Cantel', [5, 10, 7, 8, 6]),
-      TemperatureData('Concepcion Chiquirichapa', [6, 8, 5, 7, 9]),
-      TemperatureData('Centro Universitario de Occidente', [4, 7, 6, 5, 8]),
+      TemperatureData('Cantel', [5, 10, 7, 8, 6, 22, 15]),
+      TemperatureData('Concepcion Chiquirichapa', [6, 8, 5, 7, 9, 12, 25]),
+      TemperatureData('Centro Universitario de Occidente', [4, 7, 6, 5, 8, 12, 15]),
     ];
 
     return ListView(
@@ -70,6 +70,7 @@ class GraphicReportBody extends StatelessWidget {
             primaryXAxis: CategoryAxis(),
             title: ChartTitle(text: data.location),
             legend: Legend(isVisible: false),
+            tooltipBehavior: TooltipBehavior(enable: true),
             series: <ChartSeries>[
               ColumnSeries<Map<String, dynamic>, String>(
                 dataSource: chartData,
@@ -106,6 +107,7 @@ class GraphicReportBody extends StatelessWidget {
               primaryXAxis: CategoryAxis(),
               title: ChartTitle(text: data.location),
               legend: Legend(isVisible: false),
+              tooltipBehavior: TooltipBehavior(enable: true),
               series: <ChartSeries>[
                 ColumnSeries<Map<String, dynamic>, String>(
                   dataSource: chartData,
@@ -143,13 +145,14 @@ class GraphicReportBody extends StatelessWidget {
               primaryXAxis: CategoryAxis(),
               title: ChartTitle(text: data.location),
               legend: Legend(isVisible: false),
+              tooltipBehavior: TooltipBehavior(enable: true),
               series: <ChartSeries>[
                 ColumnSeries<Map<String, dynamic>, String>(
                   dataSource: chartData,
                   xValueMapper: (datum, _) => datum['x'] as String,
                   yValueMapper: (datum, _) => datum['y'] as double,
                   name: 'Radiación',
-                  color: Color.fromARGB(255, 234, 70, 144),
+                  color: Color.fromARGB(255, 207, 89, 38),
                 )
               ],
             ),
