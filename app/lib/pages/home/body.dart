@@ -16,7 +16,7 @@ class _HomeBodyState extends State<HomeBody> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text("Temperatura actual en tu ubicación actual"),
-          Lottie.asset('assets/gifs/sun.json'),
+          Lottie.asset('assets/sun.json'),
           Text('23°C'),
         ],
       ),
