@@ -17,16 +17,16 @@ class CunocBody extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final nombreElementos = [
-      "Fecha y Hora",
+      "Fecha y hora",
       "Temperatura",
       "Humedad",
-      "Radiacion",
+      "Radiación",
       "Suelo 1",
       "Suelo 2",
       "Suelo 3",
-      "direccion",
-      "Velocidad del Viento",
-      "Precipitacion",
+      "Dirección",
+      "Velocidad del viento",
+      "Precipitación",
     ];
     final List<IconData> iconos = [
       Icons.access_time,
@@ -46,7 +46,7 @@ class CunocBody extends StatelessWidget {
           const SizedBox(height: 20), 
           const Center(
             child: Text(
-              'Informacion de la estacion CUNOC', 
+              'Información de la estación CUNOC', 
               style: TextStyle(fontSize: 25),
             ),
           ),
@@ -63,7 +63,7 @@ Padding(
       } else if (snapshot.hasData) {
         final weatherData = snapshot.data!;
         final valoresJson = [
-          weatherData.fechahora.toString(),
+          _formatDateTime(weatherData.fechahora),
           weatherData.temperatura.toString(),
           weatherData.humedad.toString(),
           weatherData.radiacion.toString(),
@@ -100,7 +100,7 @@ Padding(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Informacion',
+                            'Información',
                             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -162,7 +162,7 @@ Padding(
 ///*----------------------      
             const SizedBox(height: 20),
             const Center(
-              child: Text('Visualizacion de Suelos', style: TextStyle(fontSize: 25)),
+              child: Text('Visualización de Suelos', style: TextStyle(fontSize: 25)),
             ),
             const SizedBox(height: 20),
 
@@ -269,7 +269,7 @@ SizedBox(
            // brujula
           const SizedBox(height: 20),
           const Center(
-            child: Text('Direccion del viento', style: TextStyle(fontSize: 25)),
+            child: Text('Dirección del viento', style: TextStyle(fontSize: 25)),
           ),
 Center(
   child: FutureBuilder<WeatherData>(
@@ -357,4 +357,11 @@ Center(
       ),
     );
   }
+
+  String _formatDateTime(DateTime dateTime) {
+  String fecha = '${dateTime.day}/${dateTime.month}/${dateTime.year}';
+  String hora = '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}';
+  return '$fecha $hora';
+}
+
 }

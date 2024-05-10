@@ -31,7 +31,7 @@ class ReportBody extends StatelessWidget {
           const SizedBox(height: 20),
           const Center(
             child: Text(
-              'Información de los datos',
+              'Información de los últimos 7 días',
               style: TextStyle(fontSize: 25),
             ),
           ),
