@@ -120,7 +120,18 @@ Padding(
                               children: [
                                 Icon(iconos[i], color: Colors.blue),
                                 const SizedBox(width: 8),
-                                Text(nombreElementos[i], style: TextStyle(fontWeight: FontWeight.bold)),
+                                // Text(nombreElementos[i], style: TextStyle(fontWeight: FontWeight.bold)),
+                                          Flexible(
+                                            child: Text(
+                                              nombreElementos[i],
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                              overflow: TextOverflow
+                                                  .visible, // Puedes cambiar esto a ellipsis, clip, o fade según tus necesidades
+                                              maxLines:
+                                                  2, // Ajusta esto según cuántas líneas quieras permitir
+                                            ),
+                                          ),
                               ],
                             ),
                           ),
