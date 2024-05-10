@@ -38,7 +38,44 @@ class ReportBody extends StatelessWidget {
           const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                _buildTable('Temperatura', temperatureDataList),
+                _buildTable('Humedad', humidityDataList),
+                _buildTable('Radiación', radiationDataList),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTable(String title, List<TemperatureData> data) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: Table(
+              columnWidths: {
+                0: FlexColumnWidth(1),
+                1: FlexColumnWidth(1),
+                2: FlexColumnWidth(1),
+              },
               border: TableBorder.all(color: Colors.grey),
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               children: [
@@ -56,16 +93,33 @@ class ReportBody extends StatelessWidget {
                         ),
                       ),
                     ),
-                    for (var item in temperatureDataList)
-                      TableCell(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            item.location,
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                          ),
+                    TableCell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Cantel',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                       ),
+                    ),
+                    TableCell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Concepción C',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                    TableCell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Cunoc',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 for (int i = 0; i < 7; i++)
@@ -75,22 +129,17 @@ class ReportBody extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Día ${i + 1}',
+                            '${i + 1}',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
-                      for (int j = 0; j < temperatureDataList.length; j++)
+                      for (int j = 0; j < data.length; j++)
                         TableCell(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Temperatura: ${temperatureDataList[j].temperatures[i]}'),
-                                Text('Radiación: ${radiationDataList[j].temperatures[i]}'),
-                                Text('Humedad: ${humidityDataList[j].temperatures[i]}'),
-                              ],
+                            child: Text(
+                              '${data[j].temperatures[i]}',
                             ),
                           ),
                         ),
