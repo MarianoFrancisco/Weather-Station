@@ -6,5 +6,5 @@ Weather station data visualization application.
 * **Pedro Ricardo Gordillo González**
 * **Luis Nery Cifuentes Rodas**
 * **Manuel Antonio Rojas Paxtor**
-* **Quinto**
+* **Luis Fernando Sánchez Santos**
 * **Sexto**
