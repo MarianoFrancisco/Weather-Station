@@ -76,9 +76,7 @@ Padding(
         ];
         return Column(
           children: [
-            const Center(
-              child: Text('Informacion de la estacion CUNOC', style: TextStyle(fontSize: 25)),
-            ),
+   
             const SizedBox(height: 20),
 
             
@@ -128,7 +126,18 @@ Padding(
                               children: [
                                 Icon(iconos[i], color: Colors.blue),
                                 const SizedBox(width: 8),
-                                Text(nombreElementos[i], style: TextStyle(fontWeight: FontWeight.bold)),
+                                // Text(nombreElementos[i], style: TextStyle(fontWeight: FontWeight.bold)),
+                                Flexible(
+                                            child: Text(
+                                              nombreElementos[i],
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                              overflow: TextOverflow
+                                                  .visible, // Puedes cambiar esto a ellipsis, clip, o fade según tus necesidades
+                                              maxLines:
+                                                  2, // Ajusta esto según cuántas líneas quieras permitir
+                                            ),
+                                          ),
                               ],
                             ),
                           ),
@@ -262,73 +271,88 @@ SizedBox(
           const Center(
             child: Text('Direccion del viento', style: TextStyle(fontSize: 25)),
           ),
-          Center(
-            child: SfRadialGauge(
-              axes: <RadialAxis>[
-                RadialAxis(
-                  minimum: 0,
-                  maximum: 360,
-                  startAngle: 270,
-                  endAngle: 270,
-                  showLabels: false,
-                  showTicks: true,
-                  radiusFactor: 0.8,
-                  majorTickStyle: MajorTickStyle(length: 20),
-                  axisLineStyle: AxisLineStyle(
-                    thickness: 20,
-                    color: Colors.orange[700],
+Center(
+  child: FutureBuilder<WeatherData>(
+    future: WeatherService().fetchLastRecord('Cunoc'),
+    builder: (context, snapshot) {
+      if (snapshot.connectionState == ConnectionState.waiting) {
+        return Center(child: CircularProgressIndicator());
+      } else if (snapshot.hasError) {
+        return Center(child: Text('Error: ${snapshot.error}'));
+      } else if (snapshot.hasData) {
+        final weatherData = snapshot.data!;
+        return SfRadialGauge(
+          axes: <RadialAxis>[
+            RadialAxis(
+              minimum: 0,
+              maximum: 360,
+              startAngle: 270,
+              endAngle: 270,
+              showLabels: false,
+              showTicks: true,
+              radiusFactor: 0.8,
+              majorTickStyle: MajorTickStyle(length: 20),
+              axisLineStyle: AxisLineStyle(
+                thickness: 20,
+                color: Colors.orange[700],
+              ),
+              pointers: <GaugePointer>[
+                NeedlePointer(
+                  value: weatherData.direccion, 
+                  enableAnimation: true,
+                  needleLength: 0.9,
+                  lengthUnit: GaugeSizeUnit.factor,
+                  needleStartWidth: 1,
+                  needleEndWidth: 5,
+                  knobStyle: KnobStyle(
+                    knobRadius: 0.1,
                   ),
-                  pointers: <GaugePointer>[
-                    NeedlePointer(
-                      value: 163,
-                      enableAnimation: true,
-                      needleLength: 0.9,
-                      lengthUnit: GaugeSizeUnit.factor,
-                      needleStartWidth: 1,
-                      needleEndWidth: 5,
-                      knobStyle: KnobStyle(
-                        knobRadius: 0.1,
-                      ),
-                    ),
-                  ],
-                  annotations: <GaugeAnnotation>[
-                    GaugeAnnotation(
-                      angle: 270, 
-                      positionFactor: 0.5, 
-                      widget: Text(
-                        'N',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    GaugeAnnotation(
-                      angle: 0, 
-                      positionFactor: 0.5, 
-                      widget: Text(
-                        'E',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    GaugeAnnotation(
-                      angle: 180, 
-                      positionFactor: 0.5, 
-                      widget: Text(
-                        'O',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    GaugeAnnotation(
-                      angle: 90, 
-                      positionFactor: 0.5, 
-                      widget: Text(
-                        'S',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
+                ),
+              ],
+              annotations: <GaugeAnnotation>[
+                GaugeAnnotation(
+                  angle: 270, 
+                  positionFactor: 0.5, 
+                  widget: Text(
+                    'N',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                GaugeAnnotation(
+                  angle: 0, 
+                  positionFactor: 0.5, 
+                  widget: Text(
+                    'E',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                GaugeAnnotation(
+                  angle: 180, 
+                  positionFactor: 0.5, 
+                  widget: Text(
+                    'O',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                GaugeAnnotation(
+                  angle: 90, 
+                  positionFactor: 0.5, 
+                  widget: Text(
+                    'S',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
-          ),
+          ],
+        );
+      } else {
+        return const SizedBox();
+      }
+    },
+  ),
+),
+
         ],
       ),
     );
