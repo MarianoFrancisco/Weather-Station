@@ -1,5 +1,6 @@
 import 'package:app/components/custom_inkwell.dart';
 import 'package:app/components/theme_toggle.dart';
+import 'package:app/pages/about/about_information.dart';
 import 'package:app/pages/cantel/cantel_information.dart';
 import 'package:app/pages/conce/conce_information.dart';
 import 'package:app/pages/cunoc/cunoc_information.dart';
@@ -20,7 +21,7 @@ class DrawerContent extends StatelessWidget {
           Container(
             width: 200,
             height: 200,
-            margin: const EdgeInsets.only(top: 50, bottom: 20),
+            margin: const EdgeInsets.only(top: 30, bottom: 10),
             child: Image.asset('assets/logo.png'),
           ),
           const Text(
@@ -148,6 +149,26 @@ CustomInkWell(
                 const SizedBox(width: 8), // Espacio entre el icono y el texto
                 Text(
                   "Graficas",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ],
+            ),
+          ),
+CustomInkWell(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const AboutTI()));
+            },
+            child: Row(
+              children: [
+                Icon(
+                  Icons.info_rounded,
+                  size: 24,
+                  color: Colors.blue,
+                ), // Aquí usamos el icono de inicio
+                const SizedBox(width: 8), // Espacio entre el icono y el texto
+                Text(
+                  "Acerca de",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                 ),
               ],
