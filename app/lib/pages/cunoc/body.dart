@@ -124,7 +124,7 @@ class CunocBody extends StatelessWidget {
               child: BarChart(
                 BarChartData(
                   alignment: BarChartAlignment.spaceAround,
-                  maxY: 100,
+                  maxY: 101,
                   barTouchData: BarTouchData(enabled: false),
                   titlesData: FlTitlesData(
                     bottomTitles: SideTitles(
