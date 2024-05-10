@@ -11,8 +11,11 @@ dependencies:
     sdk: flutter
   provider:
   shared_preferences: ^2.0.0
+  equatable: ^2.0.5
 
   pie_chart: 5.4.0
+  fl_chart: ^0.35.0
+  syncfusion_flutter_gauges: ^25.2.3
 
 dev_dependencies:
   flutter_test:
