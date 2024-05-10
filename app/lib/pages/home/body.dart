@@ -7,7 +7,10 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Home'),
+      child: Text(
+        'En esta aplicación se muestran los datos de las estaciones meteorológicas del Centro Universitario de Occidente.',
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
