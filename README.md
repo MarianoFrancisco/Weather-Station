@@ -7,4 +7,4 @@ Weather station data visualization application.
 * **Luis Nery Cifuentes Rodas**
 * **Manuel Antonio Rojas Paxtor**
 * **Luis Fernando Sánchez Santos**
-* **Sexto**
+* **Carlos Alexis Ovalle de León**

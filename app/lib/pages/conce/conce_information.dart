@@ -12,7 +12,7 @@ class Conce extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       drawer: const DrawerContent(),
       appBar: AppBar(
-        title: const Text('Conce'),
+        title: const Text('Concepción'),
         centerTitle: true,
       ),
       body: const ConceBody(),

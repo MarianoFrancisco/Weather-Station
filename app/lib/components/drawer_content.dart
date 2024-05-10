@@ -70,7 +70,7 @@ class DrawerContent extends StatelessWidget {
             },
             imagePath: 'assets/logo.png',
             child: const Text(
-              "Conce",
+              "Concepción Chiquirichapa",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
           ),
