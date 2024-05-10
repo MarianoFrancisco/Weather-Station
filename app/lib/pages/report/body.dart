@@ -1,5 +1,5 @@
-import 'package:app/pages/graphic/temperature_data.dart';
 import 'package:flutter/material.dart';
+import 'package:app/pages/graphic/temperature_data.dart';
 
 class ReportBody extends StatelessWidget {
   const ReportBody({Key? key}) : super(key: key);
@@ -24,13 +24,28 @@ class ReportBody extends StatelessWidget {
       TemperatureData('Cunoc', [4, 7, 6, 5, 8, 12, 15]),
     ];
 
-    return Center( // Centra todo el contenido verticalmente
-      child: ListView(
-        shrinkWrap: true, // Para que el ListView ocupe solo el espacio que necesita
-        children: [
-          _buildTable('Temperatura', temperatureDataList),
-          _buildTable('Humedad', humidityDataList),
-          _buildTable('Radiación', radiationDataList),
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const SizedBox(height: 20),
+          const Center(
+            child: Text(
+              'Información de los datos',
+              style: TextStyle(fontSize: 25),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                _buildTable('Temperatura', temperatureDataList),
+                _buildTable('Humedad', humidityDataList),
+                _buildTable('Radiación', radiationDataList),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -55,30 +70,82 @@ class ReportBody extends StatelessWidget {
               border: Border.all(color: Colors.grey),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: DataTable(
-              columnSpacing: 30,
-              headingRowHeight: 40,
-              dataRowHeight: 30,
-              columns: [
-                DataColumn(label: Text('Día')),
-                for (int i = 0; i < data.length; i++)
-                  DataColumn(
-                    label: Text(
-                      data[i].location,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+            child: Table(
+              columnWidths: {
+                0: FlexColumnWidth(1),
+                1: FlexColumnWidth(1),
+                2: FlexColumnWidth(1),
+              },
+              border: TableBorder.all(color: Colors.grey),
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              children: [
+                TableRow(
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
                   ),
-              ],
-              rows: List.generate(
-                7, //Ya que los valores son de 7 dias segun el ing
-                (index) => DataRow(
-                  cells: [
-                    DataCell(Text('Día ${index + 1}')),
-                    for (int i = 0; i < data.length; i++)
-                      DataCell(Text('${data[i].temperatures[index]}')),
+                  children: [
+                    TableCell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Día',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                    TableCell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Cantel',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                    TableCell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Concepción C',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                    TableCell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Cunoc',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              ),
+                for (int i = 0; i < 7; i++)
+                  TableRow(
+                    children: [
+                      TableCell(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            '${i + 1}',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      for (int j = 0; j < data.length; j++)
+                        TableCell(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              '${data[j].temperatures[i]}',
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+              ],
             ),
           ),
         ],
@@ -86,5 +153,3 @@ class ReportBody extends StatelessWidget {
     );
   }
 }
-
-
