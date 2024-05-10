@@ -5,6 +5,6 @@ Weather station data visualization application.
 * **Mariano Francisco Camposeco Camposeco**
 * **Pedro Ricardo Gordillo González**
 * **Luis Nery Cifuentes Rodas**
-* **Cuarto**
+* **Manuel Antonio Rojas Paxtor**
 * **Quinto**
 * **Sexto**
