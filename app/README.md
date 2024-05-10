@@ -4,6 +4,10 @@ Code related to the weather station application, which allows you to view the la
 
 ## **Commands**
 
+> **Download dependencies**
+```
+flutter pub get
+```
 > **Regenerate icon**
 ```
 flutter packages pub run flutter_launcher_icons:main
