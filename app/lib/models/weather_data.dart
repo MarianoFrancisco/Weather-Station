@@ -37,4 +37,6 @@ class WeatherData {
       precipitacion: double.parse(json['precipitacion']),
     );
   }
+
+
 }
