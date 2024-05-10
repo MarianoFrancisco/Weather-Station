@@ -30,70 +30,127 @@ class DrawerContent extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(bottom: 10),
           ),
-          CustomInkWell(
+CustomInkWell(
             onTap: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => const Home()));
             },
-            imagePath: 'assets/logo.png',
-            child: const Text(
-              "Inicio",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.home,
+                  size: 24,
+                  color: Colors.blue,
+                ), // Aquí usamos el icono de inicio
+                const SizedBox(width: 8), // Espacio entre el icono y el texto
+                Text(
+                  "Inicio",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ],
             ),
           ),
-          CustomInkWell(
+
+CustomInkWell(
             onTap: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => const Cunoc()));
             },
-            imagePath: 'assets/logo.png',
-            child: const Text(
-              "Cunoc",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.satellite_alt,
+                  size: 24,
+                  color: Colors.blue,
+                ), // Aquí usamos el icono de inicio
+                const SizedBox(width: 8), // Espacio entre el icono y el texto
+                Text(
+                  "CUNOC",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ],
             ),
           ),
-          CustomInkWell(
+
+CustomInkWell(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const Cantel()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const Cantel()));
             },
-            imagePath: 'assets/logo.png',
-            child: const Text(
-              "Cantel",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.satellite_alt,
+                  size: 24,
+                  color: Colors.blue,
+                ), // Aquí usamos el icono de inicio
+                const SizedBox(width: 8), // Espacio entre el icono y el texto
+                Text(
+                  "Cantel",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ],
             ),
           ),
-          CustomInkWell(
+
+CustomInkWell(
             onTap: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => const Conce()));
             },
-            imagePath: 'assets/logo.png',
-            child: const Text(
-              "Concepción Chiquirichapa",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.satellite_alt,
+                  size: 24,
+                  color: Colors.blue,
+                ), // Aquí usamos el icono de inicio
+                const SizedBox(width: 8), // Espacio entre el icono y el texto
+                Text(
+                  "Concepción Chiquirichapa",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ],
             ),
           ),
-          CustomInkWell(
+CustomInkWell(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const Report()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const Report()));
             },
-            imagePath: 'assets/logo.png',
-            child: const Text(
-              "Reportes",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.document_scanner,
+                  size: 24,
+                  color: Colors.blue,
+                ), // Aquí usamos el icono de inicio
+                const SizedBox(width: 8), // Espacio entre el icono y el texto
+                Text(
+                  "Reportes",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ],
             ),
           ),
-          CustomInkWell(
+CustomInkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const GraphicReport()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const GraphicReport()));
             },
-            imagePath: 'assets/logo.png',
-            child: const Text(
-              "Gráficas",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.insert_chart,
+                  size: 24,
+                  color: Colors.blue,
+                ), // Aquí usamos el icono de inicio
+                const SizedBox(width: 8), // Espacio entre el icono y el texto
+                Text(
+                  "Graficas",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ],
             ),
           ),
           const ThemeToggle(),
