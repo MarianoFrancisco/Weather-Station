@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
-// @author Mariano Camposeco {@literal (mariano1941@outlook.es)}
-class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
+class HomeBody extends StatefulWidget {
+  const HomeBody({Key? key}) : super(key: key);
 
   @override
+  _HomeBodyState createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
+  @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'En esta aplicación se muestran los datos de las estaciones meteorológicas del Centro Universitario de Occidente.',
-        textAlign: TextAlign.center,
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Temperatura actual en tu ubicación actual"),
+          Lottie.asset('assets/gifs/sun.json'),
+          Text('23°C'),
+        ],
       ),
     );
   }

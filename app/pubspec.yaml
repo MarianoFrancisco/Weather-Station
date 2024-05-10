@@ -18,6 +18,7 @@ dependencies:
   pie_chart: 5.4.0
   fl_chart: ^0.35.0
   syncfusion_flutter_gauges: ^20.1.59
+  lottie: ^3.1.0
 
 dev_dependencies:
   flutter_test:
