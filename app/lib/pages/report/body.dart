@@ -1,3 +1,4 @@
+import 'package:app/pages/graphic/temperature_data.dart';
 import 'package:flutter/material.dart';
 
 class ReportBody extends StatelessWidget {
@@ -5,7 +6,6 @@ class ReportBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Datos de ejemplo para las tablas
     final List<TemperatureData> temperatureDataList = [
       TemperatureData('Cantel', [17, 19, 15, 21, 18, 12, 26]),
       TemperatureData('Concepción C', [17, 19, 15, 21, 18, 15, 12]),
@@ -70,7 +70,7 @@ class ReportBody extends StatelessWidget {
                   ),
               ],
               rows: List.generate(
-                7, // Suponiendo que siempre hay 7 días de datos
+                7, //Ya que los valores son de 7 dias segun el ing
                 (index) => DataRow(
                   cells: [
                     DataCell(Text('Día ${index + 1}')),
@@ -87,10 +87,4 @@ class ReportBody extends StatelessWidget {
   }
 }
 
-// Modelo de datos de ejemplo
-class TemperatureData {
-  final String location;
-  final List<int> temperatures;
 
-  TemperatureData(this.location, this.temperatures);
-}
